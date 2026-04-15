@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 너비 증가(flex-grow) 실습</title>
+    <style>
+        /* 1. 플렉스 콘테이너 공통 설정 */
+        .container {
+            display: flex;
+            flex-direction: row;     /* 왼쪽에서 오른쪽으로 */
+            flex-wrap: wrap;          /* 여러 줄 표시 */
+            align-items: flex-start;  /* 교차축 시작점 정렬 */
+            gap: 10px;               /* 항목 간 간격 10px */
+            width: 800px;            /* 컨테이너 너비 800px */
+            border: 1px solid black;
+            margin: 20px 0;
+            min-height: 100px;
+            background-color: #f9f9f9;
+        }
+
+        /* 2. 4개의 아이템 기본 설정 및 색상 */
+        .item {
+            width: 150px;            /* 기본 항목 너비 150px */
+            padding: 20px 0;
+            text-align: center;
+        }
+        .item-1 { background-color: #ffcccc; }
+        .item-2 { background-color: #ccffcc; }
+        .item-3 { background-color: #ccccff; }
+        .item-4 { background-color: #ffffcc; }
+
+        /* 두번째 콘테이너 전용 스타일 */
+        .grow-container .item-1,
+        .grow-container .item-2,
+        .grow-container .item-4 {
+            flex-grow: 1;            /* 남은 여백을 채우기 위해 늘어남 */
+        }
+        
+        .grow-container .item-3 {
+            flex-grow: 0;            /* 기본값: 늘어나지 않음 */
+        }
+    </style>
+</head>
+<body>
+
+    <p>1. 모든 항목 고정 너비 (150px)</p>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+    </div>
+
+    <p>2. 1, 2, 4번 항목 flex-grow 적용 (3번은 flex-grow: 0)</p>
+    <div class="container grow-container">
+        <div class="item item-1">1 (Grow)</div>
+        <div class="item item-2">2 (Grow)</div>
+        <div class="item item-3">3 (Fixed)</div>
+        <div class="item item-4">4 (Grow)</div>
+    </div>
+
+</body>
+</html>
