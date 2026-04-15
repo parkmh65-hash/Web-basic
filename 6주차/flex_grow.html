@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Grow & Gap 실습</title>
+    <style>
+        /* 기본 레이아웃 스타일 */
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        /* 공통 플렉스 컨테이너 설정 */
+        .container {
+            display: flex;             /* 플렉스 레이아웃 적용 */
+            flex-wrap: wrap;           /* 여러 줄 표시 배치 */
+            align-content: flex-start; /* 교차축 시작점 정렬 */
+            width: 800px;              /* 컨테이너 너비 800px */
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            gap: 10px;                 /* 항목 간 gap 10px */
+        }
+
+        /* 공통 플렉스 아이템 설정 */
+        .item {
+            height: 60px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* 4개의 아이템 각각 다른 색상 지정 */
+        .item1 { background-color: #e74c3c; } /* 빨강 */
+        .item2 { background-color: #3498db; } /* 파랑 */
+        .item3 { background-color: #2ecc71; } /* 초록 */
+        .item4 { background-color: #f1c40f; } /* 노랑 */
+
+        /* 첫 번째 컨테이너: 모든 아이템 너비 150px 고정 */
+        .case-1 .item {
+            width: 150px;
+        }
+
+        /* 두 번째 컨테이너: flex-grow를 이용한 비율 배분 */
+        .case-2 .item {
+            width: 150px; /* 늘어나기 전 기본 너비 설정 */
+        }
+
+        /* 개별 flex-grow 설정 */
+        .grow1 { flex-grow: 1; } /* 첫 번째 항목 */
+        .grow2 { flex-grow: 2; } /* 두 번째 항목 */
+        .grow0 { flex-grow: 0; } /* 세 번째 항목 (기본값, 늘어나지 않음) */
+        .grow3 { flex-grow: 3; } /* 네 번째 항목 */
+
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox Grow & Gap 비교 실습</h1>
+    <p>컨테이너의 남는 공간을 아이템들이 지정된 비율(1:2:0:3)에 따라 어떻게 나누어 갖는지 확인해 보세요.</p>
+
+    <!-- 첫 번째 컨테이너 -->
+    <h2>1. 기본 배치 (모든 항목 너비 150px 고정)</h2>
+    <div class="container case-1">
+        <div class="item item1">150px</div>
+        <div class="item item2">150px</div>
+        <div class="item item3">150px</div>
+        <div class="item item4">150px</div>
+    </div>
+
+    <!-- 두 번째 컨테이너 -->
+    <h2>2. flex-grow 적용 (비율 1 : 2 : 0 : 3)</h2>
+    <div class="container case-2">
+        <div class="item item1 grow1">Grow 1</div>
+        <div class="item item2 grow2">Grow 2</div>
+        <div class="item item3 grow0">Grow 0</div>
+        <div class="item item4 grow3">Grow 3</div>
+    </div>
+
+</body>
+</html>
