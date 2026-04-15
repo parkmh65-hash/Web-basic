@@ -1,0 +1,55 @@
+
+<head>     <!--문서안의 스타일은 head 태그 안에 style 태그로 작성하지만, 외부 스타일 시트는 별도의 파일로 만들어 link 태그로 연결한다-->
+    <meta charset="UTF-8">
+    <title>텍스트 스타일</title> <!--검색창 상단 페이지 제목-->
+<style>
+    h1 {
+        color: hsl(242, 49%, 27%); /*HSL*/
+    }   
+    h2 {
+        color: rgb(116, 32, 32); /*rgb*/
+    }   
+    .center {
+        text-align: center; /*텍스트 가운데 정렬*/
+    }   
+    .justify {
+        text-align: justify; /*텍스트 양쪽 정렬*/
+    }   
+    .right {
+        text-align: right; /*텍스트 오른쪽 정렬*/
+    }   
+    .small_line {
+        line-height: 50%; /*텍스트 가운데 줄 긋기*/
+    }   
+    .show_line {
+        text-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5); /*텍스트 가운데 줄 긋기*/
+    }
+    .trans1 {
+        text-transform: uppercase; /*텍스트 대문자 변환*/
+    }
+    .spaceing1 {
+        letter-spacing: 2px; /*글자 간격 조절*/
+    }
+</style>
+</head>
+
+<body>
+      
+<h1> CSS</h1>
+
+<P class="center">이것은 단락입니다. </P>
+<P class="center">이것은 단락입니다. </P>
+<P class="justify">이것은 또 다른 단락입니다. </P>
+<P class="right">이것은 세 번째 단락입니다. </P>
+<P class="small_line">줄높이 단락입니다. 줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.줄높이 단락입니다.</P>
+<P style = "text-decoration: none;">이것은 세 번째 단락입니다. </P>
+<P style = "text-decoration: underline;">이것은 세 번째 단락입니다. </P>
+<P style = "text-decoration: overline;">이것은 세 번째 단락입니다. </P>
+<P style = "text-decoration: line-through;">이것은 세 번째 단락입니다. </P>
+<P class="show_line">이것은 세 번째 단락입니다. </P>
+<P class="show_line">이것은 세 번째 단락입니다. </P>
+<P class="trans1"> apple </P>
+<P > 이것이 네 번째 단락입니다. </P>
+<P class="spaceing1"> 이것이 네 번째 단락입니다. </P>
+
+</body>
