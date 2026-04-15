@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    /* [핵심] 뷰포트 설정: 
+       width=device-width: 페이지 너비를 기기의 화면 너비에 맞춤
+       initial-scale=1.0: 페이지가 처음 로드될 때 확대/축소 비율을 1:1로 설정
+    */
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰포트 실습 페이지</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* 유연한 그리드 컨테이너 */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* 화면이 좁아지면 아래로 떨어지게 설정 */
+            padding: 20px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* 뷰포트 크기에 반응하는 박스 */
+        .box {
+            background-color: #4a90e2;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            
+            /* 기본적으로 너비의 100%를 차지 (모바일 우선) */
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        /* [미디어 쿼리] 
+           뷰포트 너비가 768px 이상일 때 (태블릿/PC) 
+        */
+        @media (min-width: 768px) {
+            .box {
+                width: calc(50% - 20px); /* 한 줄에 2개씩 배치 */
+                background-color: #34a853;
+            }
+            .info-text::after {
+                content: " (현재: 태블릿/PC 뷰포트)";
+            }
+        }
+
+        /* 뷰포트 너비가 1024px 이상일 때 (데스크탑) */
+        @media (min-width: 1024px) {
+            .box {
+                width: calc(33.33% - 20px); /* 한 줄에 3개씩 배치 */
+                background-color: #ea4335;
+            }
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .info-text {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Viewport Responsive Design</h1>
+        <p class="info-text">브라우저 창의 크기를 줄이거나 늘려보세요.</p>
+    </header>
+
+    <div class="container">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+        <div class="box">BOX 4</div>
+        <div class="box">BOX 5</div>
+        <div class="box">BOX 6</div>
+    </div>
+
+</body>
+</html>

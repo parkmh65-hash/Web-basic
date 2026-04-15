@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고유가 피해지원 정책 안내</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            font-family: 'Pretendard', -apple-system, sans-serif;
+        }
+
+        /* [핵심] section 태그와 background-clip 속성 활용 */
+        section {
+            /* 배경색 레드 설정 */
+            background-color: #e63946; 
+            
+            /* 텍스트 스타일 */
+            color: white;
+            padding: 40px;
+            max-width: 600px;
+            line-height: 1.8;
+            text-align: justify;
+            word-break: keep-all;
+            
+            /* 테두리 디자인: 두꺼운 반투명 테두리 */
+            border: 20px dotted rgba(216, 222, 37, 0.3);
+            
+            /* background-clip: padding-box
+               배경색이 테두리(border) 영역까지 나가지 않고 패딩까지만 채워지도록 함 */
+            background-clip: padding-box;
+            
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(130, 4, 240, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight {
+            font-weight: 800;
+            color: #fffc00; /* 강조를 위한 노란색 텍스트 */
+        }
+
+        /* 아이콘 역할을 하는 간단한 스타일 */
+        .icon {
+            background-color: white;
+            color: #e63946;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2><span class="icon">!</span> 정책 핵심 요약</h2>
+        <p>
+            패키지 중 대표적 사업은 <span class="highlight">4조8000억원이 투입되는 고유가 피해지원금</span>이다. 
+            지역화폐 형태로 지급되며, 소득하위 70% 이하 국민과 차상위·한부모 가구, 기초생활수급자 등 
+            총 3577만명에 1인당 10만~60만원씩 지급된다. 
+        </p>
+        <p>
+            지난해 민생회복 소비쿠폰과 마찬가지로 수도권과 비수도권, 인구감소지역으로 나눠 
+            지방으로 갈수록, 취약계층일수록 지원금이 많은 구조다.
+        </p>
+    </section>
+
+</body>
+</html>

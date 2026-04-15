@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴욕의 밤 - em 스타일링</title>
+    <style>
+        /* 기준이 되는 폰트 사이즈 설정 (1em = 16px) */
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            padding: 2.5em; /* 40px / 16 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+        }
+
+        .card {
+            text-align: center;
+            /* 전체 컨테이너 너비도 em으로 설정 가능 */
+            max-width: 40em; 
+        }
+
+        /* 이미지는 요청하신 대로 em 단위를 사용하여 크기 조절 */
+        .city-image {
+            width: 37.5em;  /* 600px / 16 */
+            height: 25em;    /* 400px / 16 */
+            object-fit: cover;
+            border-radius: 1em;
+            box-shadow: 0 1.25em 3.125em rgba(0, 0, 0, 0.5);
+            margin-bottom: 2em;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* p 태그와 em 폰트 사이즈 스타일 적용 */
+        .main-text {
+            font-size: 2.25em; /* 36px / 16 */
+            font-weight: 800;
+            margin: 0.5em 0;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-text {
+            font-size: 1.125em; /* 18px / 16 */
+            font-weight: 400;
+            color: #94a3b8;
+            margin-bottom: 2em;
+        }
+
+        .quote {
+            font-size: 1em;    /* 16px / 16 */
+            line-height: 1.7;
+            color: #cbd5e1;
+            font-style: italic;
+            border-top: 0.0625em solid #334155;
+            padding-top: 1.5em;
+        }
+
+        /* 반응형: 기준 폰트 크기만 줄이면 전체 요소가 비율에 맞춰 작아짐 */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- 뉴욕 이미지 (em 단위 적용) -->
+        <img src="newyork.png" alt="New York Night View" class="city-image">
+
+        <!-- p 태그와 em 폰트 사이즈 스타일만 사용 -->
+        <p class="main-text">도시의 조각들이 모여 빛을 내는 밤</p>
+        <p class="sub-text">A Night Where City Pieces Shine Together</p>
+        
+        <p class="quote">
+            "뉴욕은 언제나 나에게 무엇이든 가능하다는 꿈을 꾸게 합니다. <br>
+            수많은 불빛 중 하나가 나의 이야기가 되는 곳."
+        </p>
+    </div>
+
+</body>
+</html>

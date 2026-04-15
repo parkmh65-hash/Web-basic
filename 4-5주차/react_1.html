@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴욕의 밤 - em 단위 스타일링</title>
+    <style>
+        /* 기본 폰트 크기 설정 */
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* 이미지는 요청하신 대로 px 단위를 사용 */
+        .main-img {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        /* p 태그와 em 단위 폰트 사이즈 스타일만 사용 */
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0.5em 0;
+            letter-spacing: -0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin: 0.2em 0;
+        }
+
+        .description {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #888;
+            max-width: 500px;
+            margin: 2em auto;
+        }
+
+        /* 모바일 대응을 위해 html 폰트 사이즈만 조절 */
+        @media (max-width: 650px) {
+            html {
+                font-size: 14px;
+            }
+            .main-img {
+                width: 100%; /* 모바일에서는 화면 너비에 맞춤 */
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 뉴욕 이미지 (px 단위 적용) -->
+        <img src="newyork.png" alt="New York Cityscape" class="main-img">
+
+        <!-- p 태그와 em 스타일만 사용한 텍스트 -->
+        <p class="title">잠들지 않는 도시의 불빛</p>
+        <p class="subtitle">City of Stars and Dreams</p>
+        
+        <p class="description">
+            끝없이 이어지는 마천루 사이로 화려한 불빛이 흐릅니다. 
+            뉴욕의 밤은 누군가에게는 치열한 삶의 현장이자, 
+            또 다른 누군가에게는 잊지 못할 낭만의 순간이 됩니다.
+        </p>
+    </div>
+
+</body>
+</html>

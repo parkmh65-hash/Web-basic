@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서 아이콘 불릿 리스트</title>
+    <style>
+        :root {
+            --menu-bg: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #0056b3;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e9ecef;
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+        }
+
+        .menu-container {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style: none; /* 기본 불릿 제거 */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            padding-left: 40px; /* 이미지 공간 확보 */
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            /* 배경 이미지(불릿) 설정 */
+            background-image: url('book.png');
+            background-repeat: no-repeat;
+            background-size: 28px 28px; /* 아이콘 크기 조절 */
+            background-position: left center;
+        }
+
+        li:hover {
+            color: var(--accent-color);
+            transform: translateX(5px); /* 호버 시 살짝 움직이는 효과 */
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h2>주요 서비스</h2>
+        <ul>
+            <li>회사소개</li>
+            <li>도서</li>
+            <li>자료실</li>
+            <li>동영상강의</li>
+        </ul>
+    </div>
+
+</body>
+</html>

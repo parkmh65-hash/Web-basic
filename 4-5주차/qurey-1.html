@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴욕 이미지와 스타일 문구</title>
+    <style>
+        /* 미디어 쿼리: 화면 너비가 768px 이상, 1024px 미만일 때 */
+        @media (min-width: 768px) and (max-width: 1023.9px) {
+            font {
+                background-color: #ffedd5; /* 연한 오렌지 배경색 */
+                color: #c2410c;           /* 진한 주황 글자색 */
+                padding: 5px 10px;
+                display: inline-block;
+                border-radius: 4px;
+            }
+        }
+
+        /* 기본 레이아웃 설정 */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8fafc;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 이미지 출력 -->
+        <img src="newyork.jpg" alt="New York Sunset">
+
+        <br>
+
+        <!-- 요청하신 2줄 문구와 font 태그 스타일 -->
+        <font size="5">
+            붉게 물든 노을이 내려앉은 뉴욕의 스카이라인은<br>
+            잠들지 않는 도시의 가장 아름다운 순간을 그려냅니다.
+        </font>
+    </div>
+
+</body>
+</html>

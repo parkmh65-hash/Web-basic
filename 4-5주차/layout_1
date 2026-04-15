@@ -1,0 +1,37 @@
+<style>
+  nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;      /* 내부 inline 요소들을 중앙으로 정렬 */
+  }
+  nav ul {
+    display: block;          /* 컨테이너는 블록 유지 */
+    list-style: none;       /* 불릿 제거 */
+    margin: 0;
+    padding: 0;
+  }
+  /* 리스트 항목을 inline-block으로 설정하여 가로로 배치 */
+  nav li {
+    display: block;  
+    margin: 0 15px;         /* 메뉴 사이의 간격 조절 */
+  }
+  nav a {
+    color: white;
+    text-decoration: none;  /* 밑줄 제거 */
+    font-weight: bold;
+    display: inline-block;  /* 클릭 영역과 여백 조절을 위해 설정 */
+    padding: 5px 10px;
+  }
+  nav a:hover {
+    color: #ffca3a;         /* 마우스 올렸을 때 색상 변경 */
+  }
+</style>
+
+<nav>
+  <ul>
+    <li><a href="#">메뉴 1</a></li>
+    <li><a href="#">메뉴 2</a></li>
+    <li><a href="#">메뉴 3</a></li>
+    <li><a href="#">메뉴 4</a></li>
+  </ul>
+</nav>
