@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Shrink & Gap 실습</title>
+    <style>
+        /* 기본 레이아웃 스타일 */
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        /* 공통 플렉스 컨테이너 설정 */
+        .container {
+            display: flex;             /* 플렉스 레이아웃 적용 */
+            flex-wrap: nowrap;         /* 줄바꿈을 막아야 shrink 효과를 명확히 볼 수 있습니다 */
+            align-content: flex-start; /* 교차축 시작점 정렬 */
+            width: 800px;              /* 컨테이너 너비 800px */
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            gap: 10px;                 /* 항목 간 gap 10px */
+            overflow: hidden;          /* 넘치는 부분 시각화 */
+        }
+
+        /* 공통 플렉스 아이템 설정 */
+        .item {
+            height: 60px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-basis: 300px;         /* 기본 너비 300px 설정 (4개 합 1200px + gap) */
+            flex-grow: 0;              /* 늘어나지는 않게 설정 */
+        }
+
+        /* 4개의 아이템 각각 다른 색상 지정 */
+        .item1 { background-color: #e74c3c; } /* 빨강 */
+        .item2 { background-color: #3498db; } /* 파랑 */
+        .item3 { background-color: #2ecc71; } /* 초록 */
+        .item4 { background-color: #f1c40f; } /* 노랑 */
+
+        /* 첫 번째 컨테이너: 모든 아이템 너비 300px (기본 shrink 1 적용 상태) */
+        .case-1 .item {
+            flex-shrink: 1;
+        }
+
+        /* 두 번째 컨테이너: flex-shrink를 이용한 축소 비율 배분 */
+        .shrink1 { flex-shrink: 1; } /* 첫 번째 항목 */
+        .shrink0 { flex-shrink: 0; } /* 두 번째 항목 (절대 줄어들지 않음) */
+        .shrink1_alt { flex-shrink: 1; } /* 세 번째 항목 */
+        .shrink2 { flex-shrink: 2; } /* 네 번째 항목 (가장 많이 줄어듦) */
+
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox Shrink & Gap 비교 실습</h1>
+    <p>아이템들의 합(1200px+)이 컨테이너(800px)보다 클 때, 각자 얼마나 줄어드는지 확인해 보세요.</p>
+
+    <!-- 첫 번째 컨테이너 -->
+    <h2>1. 기본 배치 (모든 항목 너비 300px, 기본 Shrink 1)</h2>
+    <div class="container case-1">
+        <div class="item item1">300px</div>
+        <div class="item item2">300px</div>
+        <div class="item item3">300px</div>
+        <div class="item item4">300px</div>
+    </div>
+
+    <!-- 두 번째 컨테이너 -->
+    <h2>2. flex-shrink 적용 (비율 1 : 0 : 1 : 2)</h2>
+    <div class="container case-2">
+        <div class="item item1 shrink1">Shrink 1</div>
+        <div class="item item2 shrink0">Shrink 0</div>
+        <div class="item item3 shrink1_alt">Shrink 1</div>
+        <div class="item item4 shrink2">Shrink 2</div>
+    </div>
+
+</body>
+</html>
